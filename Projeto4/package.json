@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "vue-sse": "^2.5.2"
+  }
+}
