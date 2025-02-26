@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package locadora_carros;
+
+service LocadoraCarros {
+  rpc ReservarCarro (ReservaCarroRequest) returns (ReservaCarroResponse);
+}
+
+message ReservaCarroRequest {
+  string destino = 1;
+  string data_retirada = 2;
+  string data_devolucao = 3;
+  int32 numero_pessoas = 4;
+}
+
+message ReservaCarroResponse {
+  bool sucesso = 1;
+  string mensagem = 2;
+  optional string codigo_reserva = 3;
+}

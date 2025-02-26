@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package rede_hoteleira;
+
+service RedeHoteleira {
+  rpc ReservarHotel (ReservaHotelRequest) returns (ReservaHotelResponse);
+}
+
+message ReservaHotelRequest {
+  string destino = 1;
+  string data_checkin = 2;
+  string data_checkout = 3;
+  int32 numero_pessoas = 4;
+}
+
+message ReservaHotelResponse {
+  bool sucesso = 1;
+  string mensagem = 2;
+  optional string codigo_reserva = 3;
+}

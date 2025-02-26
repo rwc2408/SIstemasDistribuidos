@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package companhia_aerea;
+
+service CompanhiaAerea {
+  rpc ReservarPassagem (ReservaPassagemRequest) returns (ReservaPassagemResponse);
+}
+
+message ReservaPassagemRequest {
+  string origem = 1;
+  string destino = 2;
+  string data = 3;
+  int32 numero_pessoas = 4;
+  bool ida_e_volta = 5;
+}
+
+message ReservaPassagemResponse {
+  bool sucesso = 1;
+  string mensagem = 2;
+  optional string codigo_reserva = 3;
+}

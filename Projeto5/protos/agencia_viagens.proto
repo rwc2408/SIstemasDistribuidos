@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package agencia_viagens;
+
+service AgenciaViagens {
+  rpc ComprarPacote (CompraPacoteRequest) returns (CompraPacoteResponse);
+}
+
+message CompraPacoteRequest {
+  string origem = 1;
+  string destino = 2;
+  string data_ida = 3;
+  optional string data_volta = 4;
+  int32 numero_pessoas = 5;
+  bool incluir_hotel = 6;
+  bool incluir_carro = 7;
+}
+
+message CompraPacoteResponse {
+  bool sucesso = 1;
+  string mensagem = 2;
+  optional string codigo_reserva_passagem = 3;
+  optional string codigo_reserva_hotel = 4;
+  optional string codigo_reserva_carro = 5;
+}
